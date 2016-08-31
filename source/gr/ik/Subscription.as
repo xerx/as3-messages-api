@@ -8,8 +8,8 @@
 		public var once:Boolean;
 		
 		public function Subscription(messageType:String, 
-									 receiver:Function, 
-									 once:Boolean = false) 
+					     receiver:Function, 
+					     once:Boolean = false) 
 		{
 			this.messageType = messageType;
 			this.receiver = receiver;

@@ -3,7 +3,6 @@
 	
 	public class Message
 	{
-		
 		public static const CLICKED:String = "msgClicked";
 		public static const DOUBLE_CLICKED:String = "msgDClicked";
 		public static const PRESSED:String = "msgPressed";

@@ -16,8 +16,8 @@
 			messengers = new Dictionary();
 		}
 		public function subscribe(messageType:String, 
-								  receiver:Function, 
-								  once:Boolean = false):void
+					  receiver:Function, 
+					  once:Boolean = false):void
 		{
 			var subscription:Subscription = new Subscription(messageType, receiver, once);
 			if(messengers[messageType])

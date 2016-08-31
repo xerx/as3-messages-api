@@ -19,6 +19,7 @@
 			sender.sendWithArgs();
 			sender.msgc.unsubscribe(Message.UPDATED, receiverWithArgs);
 			
+			//subscribe once
 			sender.msgc.subscribe(Message.UPDATED, onceReceiver, true);
 			sender.sendRepeatedly();
 		}
@@ -33,7 +34,7 @@
 		}
 		private function onceReceiver(timesSent:int):void
 		{
-			trace("Received a repeated message sent " + timesSent + " times.");
+			trace("Received a repeated message sent " + timesSent + " times. No more messages will be received.");
 		}
 
 	}

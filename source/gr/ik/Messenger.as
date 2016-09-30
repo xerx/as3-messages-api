@@ -1,4 +1,4 @@
-﻿package  gr.ik.messages
+package  gr.rdc.messages
 {
 	
 	internal class Messenger 
@@ -15,9 +15,8 @@
 		}
 		public function addSubscription(subscription:Subscription):void
 		{
-			if(subscriptions.indexOf(subscription) > -1)
+			if(subscriptionExists(subscription))
 				return;
-			
 			subscriptions.push(subscription);
 		}
 		public function deliver(args:Array):void
@@ -56,6 +55,15 @@
 			
 			if(subscriptions.length == 0)
 				_owner.removeMessengerForType(_type);			
+		}
+		private function subscriptionExists(subscription:Subscription):Boolean
+		{
+			for(var i:int = 0; i < subscriptions.length; i++)
+			{
+				if(subscription.isEqual(subscriptions[i]))
+					return true;
+			}
+			return false;
 		}
 		public function destroy():void
 		{

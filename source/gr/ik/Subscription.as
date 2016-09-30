@@ -1,4 +1,4 @@
-﻿package gr.ik.messages 
+package gr.rdc.messages 
 {
 	
 	internal class Subscription 
@@ -8,12 +8,18 @@
 		public var once:Boolean;
 		
 		public function Subscription(messageType:String, 
-					     receiver:Function, 
-					     once:Boolean = false) 
+									 receiver:Function, 
+									 once:Boolean = false) 
 		{
 			this.messageType = messageType;
 			this.receiver = receiver;
 			this.once = once;
+		}
+		public function isEqual(subscription:Subscription):Boolean
+		{
+			if(messageType == subscription.messageType && receiver == subscription.receiver)
+				return true;
+			return false;
 		}
 		public function destroy():void
 		{

@@ -1,4 +1,4 @@
-package gr.rdc.messages 
+package gr.ik.messages 
 {
 	
 	internal class Subscription 
